@@ -12,30 +12,7 @@
 
 - `Typora`：`Typora`有“**所见即所得**”的特点，即你所看见的就是文件导出后的样子，付费
 - `Obsidian`：`Obsidian`的插件市场丰富，且支持笔记之间的链接功能，个人版免费
-- `VS Code`+`Markdown All in One`插件：左边编辑、右边预览，支持所见即所得，该插件提供了最基本的渲染以及快捷键配置，其它插件如下：
-  - `Markdown PDF`：支持导出为`PDF`、`HTML`、图片、`json`等
-  - `markdownlint`：语法高亮与风格检测，同时提供更好用的格式化程序，通过以下配置来设置格式化程序、忽略部分警告：
-
-    ```json
-    "[markdown]": {
-        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
-        "editor.formatOnSave": true
-    },
-    "markdownlint.config": {
-        // 警告与错误提示
-        "default": true,
-        "MD033": false,
-    }
-    ```
-
-  - `Markdown Preview Enhanced`：提供更好的预览，通过以下配置来支持行内`LaTeX`公式渲染：
-
-    ```json
-    "markdown-preview-enhanced.mathRenderingOption": "MathJax"
-    ```
-
-  - `Markdown Preview Mermaid Support`：提供`mermaid`代码块的渲染
-  - `GitHub Markdown Preview`：使用`Github`的预览风格
+- `VS Code`+`Markdown All in One`插件：左边编辑、右边预览，支持所见即所得，该插件提供了最基本的渲染以及快捷键配置，其它插件可查看[`Markdown`插件](./1_VS%20Code.md)
 
 ## 常用记号
 
