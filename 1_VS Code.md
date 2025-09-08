@@ -15,7 +15,7 @@
   - 扩展市场：这是体现`VS Code`丰富生态的地方
 - 顶上一个搜索栏可以最重要的作用是通过键入一个`>`，以快速搜索并调用插件的功能，之前所说的功能均可由搜索栏搜索得到
 - 以上`UI`的布局均可随意拖动，以及可以在右上方调整布局
-- 配置：`VS Code`将配置分为三级，默认配置、用户配置、工作区配置，它们存储在同名文件`settings.json`中，所有均在**`首选项:打开XX配置(JSON)`**中，`VS Code`提供了`UI`界面帮助修改，但建议直接编辑`json`文件
+- 配置：`VS Code`将配置分为三级，默认配置、用户配置、工作区配置，默认配置存储于`defaultSettings.json`中，另外两者存储在同名文件`settings.json`中，所有均在**`首选项:打开XX配置(JSON)`**中，`VS Code`提供了`UI`界面帮助修改，但建议直接编辑`json`文件
   - 默认配置：`VS Code`本身及其插件会提供一系列的配置项，插件维护者需要为每一个配置项提供默认值，用户下载该插件后则会登记在默认配置中
 
     该文件是只读文件，无需在意
@@ -23,6 +23,57 @@
   - 工作区配置：存放在工作文件夹下自动生成的`./vscode/settings.json`，它会覆盖所有上级配置，未定义的配置项使用用户配置
 
 ## 基本的配置
+
+- 编辑器的基本配置(仅包括影响较大的可设置为非默认值的配置)：
+  - 区分内联建议与快速建议：快速建议指的是由字典服务提供的键入值后在光标右侧显示的提示，内联建议指由内置`AI`智能生成的代码补全
+
+    不建议使用内联建议
+  - 不在提交字符时接受建议(建议即快速提示)：
+
+    ```json
+    "editor.acceptSuggestionOnCommitCharacter": false
+    ```
+
+  - 不在按下`Enter`时接受建议：
+
+    ```json
+    "editor.acceptSuggestionOnEnter": "off"
+    ```
+
+  - 设置在保存代码时进行的动作：
+
+    ```json
+    "editor.codeActionsOnSave": {
+        // 在显示保存时自动import所需包
+        "source.organizeImports": "explicit",
+        // 有其它source动作
+    }
+    ```
+
+  - 设置打开文件时不检测`tabSize`与`insertSpaces`，即编辑器无法改变预设`tab`的空格数以及预设的是否用空格代替`tab`
+
+    ```json
+    "editor.detectIndentation": false
+    ```
+
+  - 设置保存文件时自动格式化(格式化程序需可用，通常分别设置格式化程序而在全局设置一次以下属性)：
+
+    ```json
+    "editor.formatOnSave": true
+    ```
+
+  - 设置键入`Tab`键时写入`\t`而不是空格：
+
+    ```json
+    "editor.insertSpaces": false
+    ```
+
+    此外，如果要设置一个`\t`的空格数以及一个缩进的空格数，可以设置`editor.tabSize`以及`editor.indentSize`
+  - 设置接受快速建议时，替换右侧的代码：
+
+    ```json
+    "editor.suggest.insertMode": "replace"
+    ```
 
 ## 推荐插件
 
