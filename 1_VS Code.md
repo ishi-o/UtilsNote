@@ -75,6 +75,22 @@
     "editor.suggest.insertMode": "replace"
     ```
 
+  - 设置在宽度不足时换行显示：
+  
+    ```json
+    "editor.wordWrap": "on"
+    ```
+
+- 通过设置`"[xxx]"`字典，可以设置专门适用于某种文件的配置，例如：
+
+  ```json
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
+  }
+  ```
+
+  很常用的是对不同的文件配置不同的默认格式化程序
+
 ## 推荐插件
 
 ### 中文与颜色主题
@@ -147,9 +163,19 @@
 
 ### `LaTeX`
 
+- `LaTeX`
+
 ### `Vue`
 
+- `Vue (Official)`
+- `Vetur`
+
 ### `Python`
+
+- `Python Extension Pack`
+- `Black Formatter`
+- `Flake8`
+- `Jupyter`
 
 ### `Rust`
 
