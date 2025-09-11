@@ -161,6 +161,58 @@
 
 - `Database Client`
 
+### `Vim`
+
+- `Vim`
+- `settings.json`代替了`vimrc`配置：
+  - 配置插入模式的快捷键，建议绑定`esc`
+
+    ```json
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "j"
+            ],
+            "after": [
+                "<esc>"
+            ]
+        }
+    ]
+    ```
+
+    在插入模式下键入两次`j`等价于键入`esc`
+  - 配置在正常模式下的快捷键(例如将保存文件设置为`<leader>+s`)：
+
+    ```json
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<leader>",
+                "s"
+            ],
+            "commands": [
+                ":w!"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "q"
+            ],
+            "commands": [
+                ":q!"
+            ]
+        }
+    ]
+    ```
+
+  - 配置`leader`键为空格(默认为`\`)：
+
+    ```json
+    "vim.leader": "<space>",
+    ```
+
 ### `LaTeX`
 
 - `LaTeX`
